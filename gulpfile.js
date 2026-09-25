@@ -1,10 +1,12 @@
 const { src, dest, watch, series, parallel } = require('gulp');
+
+
 const scss = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
 const autoprefixer = require('gulp-autoprefixer');
-const del = require('del');
+const clean = require('gulp-clean');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
@@ -12,7 +14,6 @@ const newer = require('gulp-newer');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const include = require('gulp-include');
 const svgstore = require('gulp-svgstore');
-
 
 function sprites() {
   return src('app/images/sprite/*.svg')
@@ -35,6 +36,7 @@ function fonts() {
     .pipe(dest('app/fonts'))
 }
 
+
 function images() {
   return src(['app/images/src/*.*', '!app/images/src/*.svg'])
     .pipe(newer('app/images'))
@@ -51,13 +53,14 @@ function images() {
     .pipe(dest('app/images'))
 }
 
+
 function styles() {
   return src('app/scss/*.scss')
-    .pipe(scss({ style: 'compressed' }))
     .pipe(autoprefixer({
       overrideBrowserslist: ['last 10 versions']
     }))
     .pipe(concat('style.min.css'))
+    .pipe(scss({ style: 'compressed' }))
     .pipe(dest('app/css'))
     .pipe(browserSync.stream())
 }
@@ -88,7 +91,8 @@ function watching() {
 }
 
 function cleanDist() {
-  return del('docs');
+  return src('dist')
+  .pipe(clean())
 }
 
 function building() {
@@ -96,10 +100,10 @@ function building() {
     'app/*.html',
     'app/js/main.min.js',
     'app/css/style.min.css',
-    'app/images/**/*.*',
+    'app/images/*.*',
     'app/fonts/*.woff2'
-  ], { base: 'app' })
-    .pipe(dest('docs'))
+  ], {base: 'app'})
+  .pipe(dest('dist'))
 }
 
 
