@@ -56,17 +56,17 @@
         transform: translateY(0);
     }
 
-    header.active .header__btn::before {
+     .header__btn::before {
         top: 22px;
         transform: rotate(45deg);
     }
 
-    .header.active .header__btn::after {
+     .header__btn::after {
         bottom: 21px;
         transform: rotate(-45deg);
     }
 
-    .header.active .header__btn span {
+     .header__btn span {
         display: none;
     }
 
