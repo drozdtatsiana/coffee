@@ -1,0 +1,50 @@
+$text-inverse: #faebd7;
+$text-primary: #707070;
+$text-secondary: #1E1E1E;
+$text-accent: #603809;
+$btn-bg: #F9C06A;
+$bg-color: #FFF9F1;
+$bg-color-accent: #FFEED8;
+$bg-color-footer: #603809;
+
+%clickerScript-400 {
+    font-family: 'ClickerScript-Regular', sans-serif;
+    font-weight: 400;
+}
+
+%playfairDisplay-400 {
+    font-family: 'PlayfairDisplay-Regular', serif;
+    font-weight: 400;
+}
+
+%playfairDisplay-500 {
+    font-family: 'PlayfairDisplay-Medium', sans-serif;
+    font-weight: 500;
+}
+
+%playfairDisplay-600 {
+    font-family: 'PlayfairDisplay-SemiBold', sans-serif;
+    font-weight: 600;
+}
+
+%playfairDisplay-700 {
+    font-family: 'PlayfairDisplay-SemiBold', sans-serif;
+    font-weight: 700;
+}
+
+%btn-base {
+    display: inline-block;
+    padding: 15px 23px;
+    background-color: $btn-bg;
+    border-radius: 24px;
+    @extend %playfairDisplay-600;
+    color: $text-secondary;
+    font-size: 16px;
+  
+}
+
+%style-title {
+    @extend %playfairDisplay-700;
+    color: $text-accent;
+    font-size: 54px;
+}
