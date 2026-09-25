@@ -509,10 +509,10 @@ body {
     gap: 30px;
     color: vars.$text-inverse;
     background-image: image-set(
-      url("../images/src/bg-footer-top.jpg"),
-      url("../images/bg-footer-top.webp") type("image/webp"),
-      url("../images/bg-footer-top.jpg")
-    );
+  url("../images/bg-footer-top.avif") type("image/avif"),
+  url("../images/bg-footer-top.webp") type("image/webp"),
+  url("../images/bg-footer-top.jpg") type("image/jpeg")
+);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
