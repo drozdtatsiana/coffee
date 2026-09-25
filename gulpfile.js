@@ -1,6 +1,5 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 
-
 const scss = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
@@ -68,6 +67,7 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/swiper/swiper-bundle.js',
+    'node_modules/nouislider/dist/nouislider.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
