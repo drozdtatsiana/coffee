@@ -4,7 +4,7 @@
 
 **Демо:** https://drozdtatsiana.github.io/coffee/
 
-
+![Главная страница](screenshots/home-page.png)
 
 ## Структура
 
